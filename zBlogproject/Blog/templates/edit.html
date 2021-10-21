@@ -31,12 +31,24 @@
         position:relative;
         top:10px;
     }
+    .success{
+        color:green;
+    }
     </style>
 </head>
 <body>
 
 
 {% include 'nav.html' %}
+
+{% if messages %}
+{% for msg in messages %}
+<div {% if msg.tags %} class="alert alert-{{msg.tags}}"{% endif %}>{{msg}}</div><br>
+{% endfor %}
+{% endif %}
+</div>
+
+
 <h1><span class="h1">This is edit</span></h1>
 <div class="f">
 <form  action="" method="POST" novalidate>

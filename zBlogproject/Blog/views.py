@@ -97,6 +97,7 @@ def Edit(request,id):
             ed=Postform(request.POST,instance = pi )
             if ed.is_valid():
                 ed.save()
+                messages.success(request,"Add Successfully!!!")
         else:
             pi=Post.objects.get(pk=id)
             ed=Postform(instance=pi)
