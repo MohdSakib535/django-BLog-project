@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(43, 43, 41);
+}
+.name{
+    color:white;
+}
+.s{
+    position:relative;
+    left:250px;
+    top: 50px;
+    color:white;
+}
+
+.con{
+    position: relative;
+    left:250px;
+    top:50px;
+    
+}
+.f{
+    position: relative;
+    top:20px;
+}
+.c{
+    position:relative;
+    top:40px;
+}

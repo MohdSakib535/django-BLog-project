@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <style>
+      body{
+      background-color: rgb(43, 43, 41);
+    }
+    .f1{
+      
+        color:white;
+        position:relative;
+        top:75px;
+        left:500px;
+        width:600px;
+    }
+    .f2{
+   
+        color:white;
+        position:relative;
+        top:20px;
+        left:500px;
+        width:500px;
+
+    }
+    .f3{
+       
+        color:white;
+        position:relative;
+        top:40px;
+        left:80px;
+        width:500px;
+    }
+
+    .class1{
+        position:relative;
+        left:30px;
+        heignt:20px;
+        width:20px;
+    }
+    .b1{
+        position :relative;
+        left:300px;
+    }
+     </style>
+</head>
+<body>
+{% if messages %}
+{% for msg in messages %}
+<div {% if msg.tags %} class="alert alert-{{msg.tags}} " role="alert"{% endif %}>{{msg}}</div>
+{% endfor %}
+{% endif %}
+<div class="f2"><h1>This is Detail page</h1></div>
+<h2 class="f3">Welcome</h2>
+<form class="f1">
+{% for fm in form %}
+{{fm.label_tag}}{{fm}}<br><br>
+{% endfor %}
+<form>
+<a class=" btn btn-info" href="{% url 'profile' %}">Back to profile</a>
+</body>
+</html>
