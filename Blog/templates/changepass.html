@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <style>
+      body{
+       background-color: rgb(43, 43, 41);
+    }
+    .f1{
+        color:white;
+        position:relative;
+        top:100px;
+        left:400px;
+        width:700px;
+    }
+    .p1{
+        color:white;
+        width:500px;
+        position:relative;
+        left:100px;
+        top:50px;
+    }
+    .success{
+        color:green;
+    }
+     </style>
+</head>
+<body>
+
+
+{% if messages %}
+{% for msg in messages %}
+<div {% if msg.tags %} class="alert alert-{{msg.tags}} " role="alert"{% endif %}>{{msg}}</div>
+{% endfor %}
+{% endif %}
+
+<div class="p1"><h1>Password Change {{name}}</h1></div>
+
+<form  class="f1" method="POST">
+{% csrf_token %}
+{% for p in pass %}
+{{p.label_tag }} {{p}} {{p.error|striptags}}<br><br>
+{% endfor %}
+<input  class="btn btn-primary" type="Submit" value="save">
+</form>
+
+
+
+    
+</body>
+</html>
